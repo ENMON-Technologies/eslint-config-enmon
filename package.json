@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-george-lint",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ESLint and Prettier Config by George",
   "keywords": [
     "javascript",

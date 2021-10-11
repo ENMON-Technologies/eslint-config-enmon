@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+
+const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'));
+
 module.exports = {
   extends: ['airbnb', 'prettier'],
   parser: '@babel/eslint-parser',
@@ -14,8 +19,10 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'no-debugger': 2,
-    'no-alert': 2,
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'no-debugger': 1,
+    'no-alert': 1,
     'no-await-in-loop': 0,
     'no-return-assign': ['error', 'except-parens'],
     'no-restricted-syntax': [2, 'ForInStatement', 'LabeledStatement', 'WithStatement'],
@@ -45,10 +52,10 @@ module.exports = {
         props: false,
       },
     ],
-    'no-console': 1,
+    'no-console': 0,
     'import/prefer-default-export': 0,
     import: 0,
-    'func-names': 1,
+    'func-names': 2,
     'space-before-function-paren': 0,
     'comma-dangle': 1,
     'max-len': 1,
@@ -61,6 +68,17 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'react/forbid-prop-types': 0,
     'react/no-unescaped-entities': 1,
+    'react/jsx-sort-props': [
+      'error',
+      {
+        callbacksLast: true,
+        shorthandFirst: true,
+        shorthandLast: false,
+        ignoreCase: false,
+        noSortAlphabetically: false,
+        reservedFirst: true,
+      },
+    ],
     'jsx-a11y/accessible-emoji': 0,
     'jsx-a11y/label-has-associated-control': [
       'error',
@@ -91,21 +109,7 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ],
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'all',
-        singleQuote: true,
-        printWidth: 120,
-        semi: true,
-        tabWidth: 2,
-        arrowParens: 'avoid',
-        useTabs: false,
-        // below line only for windows users facing CLRF and eslint/prettier error
-        // non windows users feel free to delete it
-        endOfLine: 'auto',
-      },
-    ],
+    'prettier/prettier': ['error', prettierOptions],
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': [
       'warn',
