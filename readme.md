@@ -1,11 +1,11 @@
 # Eslint and Prettier Setup
 
 ## What it does
-* Lints JavaScript based on the latest standards
-* Fixes issues and formatting errors with Prettier
-* Lints + Fixes inside of html script tags
-* Lints + Fixes React via eslint-config-airbnb
 
+- Lints JavaScript based on the latest standards
+- Fixes issues and formatting errors with Prettier
+- Lints + Fixes inside of html script tags
+- Lints + Fixes React via eslint-config-airbnb
 
 ## Local / Per Project Install
 
@@ -14,7 +14,7 @@
 2. Then we need to install everything needed by the config:
 
 ```
-npx install-peerdeps --dev eslint-config-wesbos
+npx install-peerdeps --dev eslint-config-george-lint
 ```
 
 3. You can see in your package.json there are now a big list of devDependencies.
@@ -23,20 +23,19 @@ npx install-peerdeps --dev eslint-config-wesbos
 
 ```json
 {
-  "extends": [ "wesbos" ]
+  "extends": ["george-lint"]
 }
 ```
 
-For TypeScript projects, use `wesbos/typescript`.
+For TypeScript projects, use `george-lint/typescript`.
 
 ```json
 {
-  "extends": [ "wesbos/typescript" ]
+  "extends": ["george-lint/typescript"]
 }
 ```
 
 TypeScript users will also need a `tsconfig.json` file in their project. An empty object (`{}`) will do if this is a new project.
-
 
 Tip: You can alternatively put this object in your `package.json` under the property `"eslintConfig":`. This makes one less file in your project.
 
@@ -58,7 +57,7 @@ If you'd like to overwrite eslint or prettier settings, you can add the rules in
 ```js
 {
   "extends": [
-    "wesbos"
+    "george-lint"
   ],
   "rules": {
     "no-console": 2,
@@ -83,36 +82,37 @@ Once you have done one, or both, of the above installs. You probably want your e
 
 1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the Open (Open Settings) icon in the top right corner:
-  ```js
-  // These are all my auto-save configs
-  "editor.formatOnSave": true,
-  // turn it off for JS and JSX, we will do this via eslint
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  // show eslint icon at bottom toolbar
-  "eslint.alwaysShowStatus": true,
-  // tell the ESLint plugin to run on save
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
-  ```
 
-After attempting to lint your file for the first time, you may need to click on 'ESLint' in the bottom right and select 'Allow Everywhere' in the alert window. 
+```js
+// These are all my auto-save configs
+"editor.formatOnSave": true,
+// turn it off for JS and JSX, we will do this via eslint
+"[javascript]": {
+  "editor.formatOnSave": false
+},
+"[javascriptreact]": {
+  "editor.formatOnSave": false
+},
+// show eslint icon at bottom toolbar
+"eslint.alwaysShowStatus": true,
+// tell the ESLint plugin to run on save
+"editor.codeActionsOnSave": {
+  "source.fixAll": true
+}
+```
+
+After attempting to lint your file for the first time, you may need to click on 'ESLint' in the bottom right and select 'Allow Everywhere' in the alert window.
 
 Finally you'll usually need to restart VS code. They say you don't need to, but it's never worked for me until I restart.
 
 ## With Create React App
 
-1. Run `npx install-peerdeps --dev eslint-config-wesbos`
-1. Crack open your `package.json` and replace `"extends": "react-app"` with `"extends": "wesbos"`
+1. Run `npx install-peerdeps --dev eslint-config-george-lint`
+1. Crack open your `package.json` and replace `"extends": "react-app"` with `"extends": "george-lint"`
 
 ## With Gatsby
 
-1. Run `npx install-peerdeps --dev eslint-config-wesbos`
+1. Run `npx install-peerdeps --dev eslint-config-george-lint`
 1. If you have an existing `.prettierrc` file, delete it.
 1. follow the `Local / Per Project Install` steps above
 
@@ -125,13 +125,14 @@ Can someone add this?
 If you have previously configured ESLint to run via a File Watcher, [turn that off.](https://www.jetbrains.com/help/idea/using-file-watchers.html#enableFileWatcher)
 
 ### If you choose Local / Per Project Install Above
+
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
 1. Select **Automatic ESLint Configuration**
 1. Check **Run eslint --fix on save**
 
 ### If you choose Global Install
 
-The following steps are for a typical Node / ESLint global installtion.  If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
+The following steps are for a typical Node / ESLint global installtion. If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
 
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
 1. Select **Manual ESLint configuration**
@@ -144,14 +145,14 @@ The following steps are for a typical Node / ESLint global installtion.  If you 
 
 1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")
 1. Uncheck both **On code reformat** and **On save**
-1. *Optional BUT IMPORTANT:* If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
-    1. Make sure the **Run for files** glob does not include `js,ts,jsx,tsx`.
-    2. An example glob for styles, config, and markdown. `{**/*,*}.{yml,css,sass,md}`
+1. _Optional BUT IMPORTANT:_ If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
+   1. Make sure the **Run for files** glob does not include `js,ts,jsx,tsx`.
+   2. An example glob for styles, config, and markdown. `{**/*,*}.{yml,css,sass,md}`
 
 ## With Typescript
 
-Same instructions as above, just make sure you extend `wesbos/typescript` instead of just `wesbos`.
+Same instructions as above, just make sure you extend `george-lint/typescript` instead of just `george-lint`.
 
 ## With Yarn
 
-It should just work, but if they aren't showing up in your package.json, try `npx install-peerdeps --dev eslint-config-wesbos -Y`
+It should just work, but if they aren't showing up in your package.json, try `npx install-peerdeps --dev eslint-config-george-lint -Y`
