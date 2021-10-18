@@ -16,6 +16,11 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   // Then we add our own custom typescript rules
   rules: {
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+
+    '@typescript-eslint/comma-dangle': ['off'],
+
     // This allows us to use async function on addEventListener().
     "@typescript-eslint/no-misused-promises": [
       "error",

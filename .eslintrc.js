@@ -5,6 +5,7 @@ const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.pre
 
 module.exports = {
   extends: ['airbnb', 'prettier'],
+  plugins: ['html', 'prettier', 'react-hooks'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
@@ -19,8 +20,7 @@ module.exports = {
     jest: true,
   },
   rules: {
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
+    'no-use-before-define': ['error'],
     'no-debugger': 1,
     'no-alert': 1,
     'no-await-in-loop': 0,
@@ -119,8 +119,6 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    '@typescript-eslint/comma-dangle': ['off'],
     'react/jsx-props-no-spreading': 'off',
   },
-  plugins: ['html', 'prettier', 'react-hooks'],
 };
