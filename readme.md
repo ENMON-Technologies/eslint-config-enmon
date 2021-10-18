@@ -14,7 +14,7 @@
 2. Then we need to install everything needed by the config:
 
 ```
-npx install-peerdeps --dev eslint-config-george-lint
+npm --dev eslint-config-george-lint
 ```
 
 3. You can see in your package.json there are now a big list of devDependencies.
@@ -107,12 +107,12 @@ Finally you'll usually need to restart VS code. They say you don't need to, but 
 
 ## With Create React App
 
-1. Run `npx install-peerdeps --dev eslint-config-george-lint`
+1. Run `npm --dev eslint-config-george-lint`
 1. Crack open your `package.json` and replace `"extends": "react-app"` with `"extends": "george-lint"`
 
 ## With Gatsby
 
-1. Run `npx install-peerdeps --dev eslint-config-george-lint`
+1. Run `npx --dev eslint-config-george-lint`
 1. If you have an existing `.prettierrc` file, delete it.
 1. follow the `Local / Per Project Install` steps above
 
@@ -155,4 +155,4 @@ Same instructions as above, just make sure you extend `george-lint/typescript` i
 
 ## With Yarn
 
-It should just work, but if they aren't showing up in your package.json, try `npx install-peerdeps --dev eslint-config-george-lint -Y`
+It should just work, try `yarn add eslint-config-george-lint`
