@@ -8,9 +8,9 @@
       "node"
     ],
     // What should we export the code as?
-    "target": "ES5",
+    // "target": "ES5",
     // What types of modules should we use?
-    "module": "commonjs",
+    // "module": "commonjs",
     // What libs should we include? This is different than target because we could be using Polyfills
     // "lib": [],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
