@@ -25,6 +25,7 @@ module.exports = {
     'no-alert': 1,
     'no-await-in-loop': 0,
     'no-return-assign': ['error', 'except-parens'],
+    'no-return-await': 0,
     'no-restricted-syntax': [2, 'ForInStatement', 'LabeledStatement', 'WithStatement'],
     'no-unused-vars': [
       1,

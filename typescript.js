@@ -19,6 +19,9 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
 
+    // Depriciated rule due to zero-cost async stack traces
+    '@typescript-eslint/return-await': 'off',
+
     '@typescript-eslint/comma-dangle': ['off'],
 
     // This allows us to use async function on addEventListener().
