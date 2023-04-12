@@ -1,11 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-
-const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'));
-
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  plugins: ['html', 'prettier', 'react-hooks'],
+  extends: [
+    'airbnb',
+    './prettier.js', // Needs to be last because it turns off all rules that are unnecessary or might conflict with Prettier.
+  ],
+  plugins: ['html', 'react-hooks'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
@@ -59,7 +57,6 @@ module.exports = {
     'func-names': 2,
     'space-before-function-paren': 0,
     'comma-dangle': 1,
-    'max-len': ['error', { code: prettierOptions.printWidth }],
     'import/extensions': 0,
     'no-underscore-dangle': 0,
     'consistent-return': 1,
@@ -110,7 +107,6 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ],
-    'prettier/prettier': ['error', prettierOptions],
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': [
       'warn',

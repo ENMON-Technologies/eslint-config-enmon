@@ -10,6 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     // Layer in all the JS Rules
     './.eslintrc.js',
+    './prettier.js', // Needs to be last because it turns off all rules that are unnecessary or might conflict with Prettier.
   ],
   // then add some extra good stuff for Typescript
   parser: '@typescript-eslint/parser',
