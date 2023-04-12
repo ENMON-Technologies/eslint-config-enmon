@@ -1,22 +1,5 @@
 module.exports = {
-  extends: [
-    'airbnb',
-    './prettier.js', // Needs to be last because it turns off all rules that are unnecessary or might conflict with Prettier.
-  ],
-  plugins: ['html'],
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    requireConfigFile: false,
-    babelOptions: {
-      presets: ['@babel/preset-react'],
-    },
-  },
-  env: {
-    browser: true,
-    node: true,
-    jquery: true,
-    jest: true,
-  },
+  extends: ['airbnb'],
   rules: {
     'no-use-before-define': ['error'],
     'no-debugger': 1,
