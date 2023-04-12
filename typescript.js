@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    './.eslintrc.js',
+    './javascript.js',
     'plugin:@typescript-eslint/recommended', // Uses rules from `@typescript-eslint/eslint-plugin`,
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'airbnb-typescript',

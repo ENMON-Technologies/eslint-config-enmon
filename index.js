@@ -1,3 +1,5 @@
-const eslintrc = require('./.eslintrc');
-
-module.exports = eslintrc;
+module.exports = {
+  configs: {
+    // TODO: add FE & BE configs
+  },
+};
