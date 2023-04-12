@@ -44,5 +44,12 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-no-useless-fragment': 2,
     'react/prop-types': 0,
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: ['arrow-function', 'function-declaration'],
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
 };
