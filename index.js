@@ -1,8 +1,9 @@
 const frontend = require('./frontend.js');
+const backend = require('./backend.js');
 
 module.exports = {
   configs: {
     frontend,
-    // TODO: Add backend config
+    backend,
   },
 };
