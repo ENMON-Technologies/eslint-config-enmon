@@ -1,5 +1,8 @@
+const frontend = require('./frontend.js');
+
 module.exports = {
   configs: {
-    // TODO: add FE & BE configs
+    frontend,
+    // TODO: Add backend config
   },
 };
