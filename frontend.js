@@ -6,7 +6,5 @@ module.exports = {
   ],
   env: {
     browser: true,
-    'shared-node-browser': true,
-    jest: true,
   },
 };
