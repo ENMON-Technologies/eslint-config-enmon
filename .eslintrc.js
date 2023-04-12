@@ -3,7 +3,7 @@ module.exports = {
     'airbnb',
     './prettier.js', // Needs to be last because it turns off all rules that are unnecessary or might conflict with Prettier.
   ],
-  plugins: ['html', 'react-hooks'],
+  plugins: ['html'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
@@ -60,37 +60,6 @@ module.exports = {
     'import/extensions': 0,
     'no-underscore-dangle': 0,
     'consistent-return': 1,
-    'react/display-name': 1,
-    'react/no-array-index-key': 2,
-    'react/react-in-jsx-scope': 0,
-    'react/prefer-stateless-function': 0,
-    'react/forbid-prop-types': 0,
-    'react/no-unescaped-entities': 1,
-    'react/jsx-sort-props': [
-      'error',
-      {
-        callbacksLast: true,
-        shorthandFirst: true,
-        shorthandLast: false,
-        ignoreCase: false,
-        noSortAlphabetically: false,
-        reservedFirst: true,
-      },
-    ],
-    'jsx-a11y/accessible-emoji': 0,
-    'jsx-a11y/label-has-associated-control': [
-      'error',
-      {
-        assert: 'either',
-      },
-    ],
-    'react/require-default-props': 0,
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.mdx'],
-      },
-    ],
     radix: 0,
     'no-shadow': [
       2,
@@ -107,17 +76,5 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ],
-    'jsx-a11y/href-no-hash': 'off',
-    'jsx-a11y/anchor-is-valid': [
-      'warn',
-      {
-        aspects: ['invalidHref'],
-      },
-    ],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-no-useless-fragment': 2,
-    'react/prop-types': 0,
   },
 };
