@@ -1,15 +1,9 @@
 module.exports = {
-  globals: {
-    React: true,
-    JSX: true,
-  },
   extends: [
+    './javascript.js',
     'plugin:@typescript-eslint/recommended', // Uses rules from `@typescript-eslint/eslint-plugin`,
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    // Layer in all the JS Rules
-    './.eslintrc.js',
+    'airbnb-typescript',
   ],
   // then add some extra good stuff for Typescript
   parser: '@typescript-eslint/parser',

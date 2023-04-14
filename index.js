@@ -1,3 +1,9 @@
-const eslintrc = require('./.eslintrc');
+const frontend = require('./frontend.js');
+const backend = require('./backend.js');
 
-module.exports = eslintrc;
+module.exports = {
+  configs: {
+    frontend,
+    backend,
+  },
+};
