@@ -1,5 +1,4 @@
 module.exports = {
-  extends: ['airbnb'],
   rules: {
     'no-use-before-define': ['error'],
     'no-debugger': 1,

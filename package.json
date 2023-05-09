@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-enmon",
-  "version": "1.0.0",
-  "description": "ESLint and Prettier Config by George",
+  "version": "1.0.1",
+  "description": "ESLint and Prettier Config by ENMON-Technologies",
   "keywords": [
     "javascript",
     "typescript",
@@ -12,8 +12,8 @@
     "prettier"
   ],
   "main": "index.js",
-  "repository": "git@github.com:Jirijancik/lint.git",
-  "author": "Jiri Jancik",
+  "repository": "https://github.com/ENMON-Technologies/eslint-config-enmon",
+  "author": "ENMON-Technologies",
   "license": "MIT",
   "dependencies": {
     "eslint-config-airbnb": "^19.0.4",
@@ -51,6 +51,6 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix ."
   }
 }
