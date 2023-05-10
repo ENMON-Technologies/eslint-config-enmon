@@ -1,19 +1,10 @@
 module.exports = {
-  extends: [
-    './javascript.js',
-    'plugin:@typescript-eslint/recommended', // Uses rules from `@typescript-eslint/eslint-plugin`,
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'airbnb-typescript',
-  ],
-  // then add some extra good stuff for Typescript
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   // Then we add our own custom typescript rules
   rules: {
-    'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
 
-    // Depriciated rule due to zero-cost async stack traces
     '@typescript-eslint/return-await': 'off',
 
     '@typescript-eslint/comma-dangle': ['off'],
@@ -26,7 +17,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-explicit-any': 'off',
-    'no-redeclare': 'off',
     '@typescript-eslint/no-redeclare': [
       'warn',
       {
@@ -34,7 +24,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-floating-promises': 'off',
-    'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
   },
   parserOptions: {
