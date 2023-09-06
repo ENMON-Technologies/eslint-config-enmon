@@ -6,7 +6,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
 
     // Note: you must disable the base rule as it can report incorrect errors
-    "no-return-await": "off",
+    'no-return-await': 'off',
     '@typescript-eslint/return-await': ['error', 'always'],
 
     '@typescript-eslint/comma-dangle': ['off'],
