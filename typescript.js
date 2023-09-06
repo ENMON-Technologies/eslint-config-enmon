@@ -5,7 +5,9 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-use-before-define': ['error'],
 
-    '@typescript-eslint/return-await': 'off',
+    // Note: you must disable the base rule as it can report incorrect errors
+    "no-return-await": "off",
+    '@typescript-eslint/return-await': ['error', 'always'],
 
     '@typescript-eslint/comma-dangle': ['off'],
 
@@ -16,6 +18,7 @@ module.exports = {
         checksVoidReturn: false,
       },
     ],
+    '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-redeclare': [
       'warn',
