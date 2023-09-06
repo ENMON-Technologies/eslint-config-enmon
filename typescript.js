@@ -18,7 +18,6 @@ module.exports = {
         checksVoidReturn: false,
       },
     ],
-    '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-redeclare': [
       'warn',
@@ -26,7 +25,7 @@ module.exports = {
         ignoreDeclarationMerge: true,
       },
     ],
-    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-shadow': ['error'],
   },
   parserOptions: {
