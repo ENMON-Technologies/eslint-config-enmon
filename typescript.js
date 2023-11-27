@@ -5,7 +5,9 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-use-before-define': ['error'],
 
-    '@typescript-eslint/return-await': 'off',
+    // Note: you must disable the base rule as it can report incorrect errors
+    'no-return-await': 'off',
+    '@typescript-eslint/return-await': ['error', 'always'],
 
     '@typescript-eslint/comma-dangle': ['off'],
 
@@ -23,7 +25,7 @@ module.exports = {
         ignoreDeclarationMerge: true,
       },
     ],
-    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-shadow': ['error'],
   },
   parserOptions: {
