@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['unicorn'],
   extends: [
     'eslint:recommended',
     'airbnb-base',
@@ -11,5 +12,37 @@ module.exports = {
   ],
   env: {
     node: true,
+  },
+  rules: {
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        ignore: ['devEUI', 'DevEUI'],
+        replacements: {
+          acc: false,
+          arg: false,
+          args: false,
+          attr: false,
+          ctx: false,
+          db: false,
+          dir: false,
+          doc: false,
+          env: false,
+          fn: false,
+          i: false,
+          msg: false,
+          opt: false,
+          opts: false,
+          param: false,
+          params: false,
+          prev: false,
+          prop: false,
+          props: false,
+          ref: false,
+          req: false,
+          res: false,
+        },
+      },
+    ],
   },
 };
