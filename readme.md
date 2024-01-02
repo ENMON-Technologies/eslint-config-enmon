@@ -69,6 +69,17 @@ In backend project:
 
 5. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
+## Files
+
+|File           |Description
+|----           |-----------
+| backend.js    |Config common to all our backend projects.
+| frontend.js   |Config common to all our frontend projects.
+| javascript.js |Config common to all our projects, requiring only plain JavaScript to work.
+| prettier.js   |Rules conflicting with Prettier.
+| react.js      |Config common to all our React projects.
+| typescript.js |Config common to all our projects, requiring TypeScript to work.
+
 ## FAQ
 
 ### Why are some ESLint related dependencies in `devDependencies` and some in `peerDependencies`?
