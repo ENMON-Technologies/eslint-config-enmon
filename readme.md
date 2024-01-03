@@ -12,10 +12,10 @@ yarn add --dev github:ENMON-Technologies/eslint-config-enmon#v1.0.0
 
 2. Install peer dependencies
 
-For backend project:
+Common:
 
 ```bash
-yarn add --dev \
+yarn add -D -E \
   @typescript-eslint/eslint-plugin@^5.58.0 \
   @typescript-eslint/parser@^5.58.0 \
   eslint@^8.38.0 \
@@ -26,19 +26,22 @@ yarn add --dev \
   typescript@^4.4.2
 ```
 
-For frontend project:
-
-All BE peer dependencies +
+For backend project:
 
 ```bash
-yarn add --dev \
+yarn add -D -E \
+  eslint-plugin-unicorn \
+```
+
+For frontend project:
+
+```bash
+yarn add -D -E \
   eslint-plugin-html@^7.1.0 \
   eslint-plugin-jsx-a11y@^6.7.1 \
   eslint-plugin-react@^7.32.2 \
   eslint-plugin-react-hooks@^4.6.0 \
 ```
-
-
 
 3. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
 
